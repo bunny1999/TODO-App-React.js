@@ -41,7 +41,7 @@ function App() {
   return (
     <TodoContext.Provider value={{ todos, dispatch }}>
       <Container>
-        <h1>TODO App</h1>
+        <h1>TODO's</h1>
         <TextForm 
           // addTodo={addTodo}
         />
