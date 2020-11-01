@@ -5,7 +5,7 @@ import { TodoContext } from "../context/TodoContext";
 import { FaCheckDouble } from "react-icons/fa";
 import { REMOVE_TODO } from "../context/action.types";
 
-const TodoList = () => {
+const TodoList = ({todoList,removeTodo}) => {
   const { todos, dispatch } = useContext(TodoContext);
 
   return (
@@ -14,10 +14,13 @@ const TodoList = () => {
         <ListGroupItem key={todo.id}>
           {todo.todoString}
           <span
-            onClick={()=>dispatch({
-              type: REMOVE_TODO,
-              payload: todo.id,
-            })}
+            onClick={()=>{
+                // removeTodo(todo.id)
+                dispatch({
+                    type: REMOVE_TODO,
+                    payload: todo.id,
+                })
+            }}
             className="float-right"
           >
             <FaCheckDouble />

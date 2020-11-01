@@ -12,7 +12,7 @@ import { TodoContext } from "../context/TodoContext";
 import { v4 } from "uuid";
 import { ADD_TODO } from "../context/action.types";
 
-const TextForm = () => {
+const TextForm = ({addTodo}) => {
   const [todoString, setTodoString] = useState("");
   const { dispatch } = useContext(TodoContext);
 
@@ -27,6 +27,8 @@ const TextForm = () => {
       id: v4(),
     };
 
+    // addTodo(todo)
+    
     dispatch({
       type: ADD_TODO,
       payload: todo,
@@ -48,7 +50,7 @@ const TextForm = () => {
             onChange={e => setTodoString(e.target.value)}
           />
           <InputGroupAddon addonType="prepend">
-            <Button onClick={onSubmit} color="warning">
+            <Button color="warning">
               Add
             </Button>
           </InputGroupAddon>
