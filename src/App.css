@@ -32,6 +32,27 @@ form {
   border-radius: 8px;
 }
 
+@media (max-width:1000px){
+  form {
+    right: 10%;
+    left: 10%;
+  }
+  .items {
+    right: 10%;
+    left: 10%;
+  }
+}
+@media (min-width:1000px){
+  form {
+    right: 30%;
+    left: 30%;
+  } 
+  .items {
+    right: 30%;
+    left: 30%;
+  }
+}
+
 .form-group {
   margin-bottom: 0;
 }
